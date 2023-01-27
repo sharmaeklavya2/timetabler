@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<title>Timetable</title>
+<style>
+{{style}}
+</style>
+</head>
+<body>
+<h1>Timetable</h1>
+<div class="main">
+<div class="ttab">
+    <div class="ttab-ticks">
+        <div class="ttab-ticks-header"></div>
+        <div class="ttab-ticks-body">
+            {% for h in range(minHour, maxHour+1) %}
+            <div class="ttab-tick" style="top: {{100 * (h - minHour) / (maxHour - minHour)}}%;">
+                <span class="ttab-tick-label">{{h}}:00</span>
+                <span class="ttab-tick-line"></span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="ttab-events">
+        <div class="ttab-margin"></div>
+    {% for dayLabel in dayLabels %}
+        <div class="ttab-day">
+            <div class="ttab-day-header">{{dayLabel}}</div>
+            <div class="ttab-day-body">
+        {% for event in events[loop.index0] %}
+                <div class="ttab-event" style="top: {{100 * event.beginFrac}}%; height: {{100 * event.lenFrac}}%;">
+                    {% if event.name %}<span>{{event.name}}</span>{% endif %}
+                    <span>{{event.beginTime}} to {{event.endTime}}</span>
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+</div>
+</body>
+</html>

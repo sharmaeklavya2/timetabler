@@ -1,0 +1,102 @@
+html {
+    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0 2.5rem 2.5rem 2.5rem;
+}
+a:not(:hover) {
+    text-decoration: none;
+}
+body {
+    color: #202020;
+    --tick-color: rgba(128, 128, 128, 0.4);
+    --header-height: 3rem;
+}
+@media (max-width: 850px) {
+    body {
+        padding: 0 1rem 1rem 1rem;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1b1e20;
+        color: #c8c8c8;
+    }
+}
+
+.main {
+    position: relative;
+    height: 450px;
+    overflow-y: scroll;
+    resize: vertical;
+}
+.ttab {
+    width: 100%;
+    height: calc(100% - 1rem);
+    position: relative;
+    resize: vertical;
+}
+.ttab-ticks, .ttab-events {
+    position: absolute;
+    width: 100%; height: 100%;
+    display: flex;
+}
+
+.ttab-ticks {
+    flex-direction: column;
+}
+.ttab-ticks-header {
+    height: var(--header-height);
+}
+.ttab-ticks-body {
+    position: relative;
+    flex: 1;
+}
+.ttab-tick-label {
+    width: 3rem;
+}
+.ttab-tick-line {
+    height: 1px;
+    flex: 1;
+    background-color: var(--tick-color);
+}
+.ttab-tick {
+    height: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.ttab-margin {
+    width: 3.5rem;
+}
+.ttab-day {
+    flex: 1;
+    border: 1px solid var(--tick-color);
+    display: flex;
+    flex-direction: column;
+}
+.ttab-day-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+.ttab-day-body {
+    flex: 1;
+    position: relative;
+}
+.ttab-event {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+.ttab-event > * {
+    margin: 0.1rem 0.3rem;
+}
