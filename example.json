@@ -1,0 +1,40 @@
+[
+{
+    "privateName": "CS 598",
+    "name": "Lecture",
+    "days": ["Wed", "Fri"],
+    "time": ["11:00", "12:20"]
+},
+{
+    "privateName": "MATH 432",
+    "name": "Lecture",
+    "venue": "Altgeld 341",
+    "days": ["Tues", "Thurs"],
+    "time": ["14:00", "15:20"]
+},
+{
+    "privateName": "MATH 444",
+    "name": "Lecture",
+    "venue": "Altgeld 241",
+    "days": ["Mon", "Wed", "Fri"],
+    "time": ["13:00", "13:50"]
+},
+{
+    "name": "Office hours",
+    "venue": "TB 202/205",
+    "day": "Wed",
+    "time": ["16:00", "17:30"]
+},
+{
+    "privateName": "CS seminar",
+    "name": "Seminar",
+    "day": "Mon",
+    "time": ["11:00", "12:00"]
+},
+{
+    "privateName": "ISE seminar",
+    "name": "Seminar",
+    "day": "Fri",
+    "time": ["10:00", "11:00"]
+}
+]

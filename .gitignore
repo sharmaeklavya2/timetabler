@@ -1,5 +1,5 @@
 secret
-output
+output.html
 .env
 
 *.pyc
