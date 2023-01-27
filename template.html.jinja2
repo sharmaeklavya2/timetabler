@@ -18,14 +18,15 @@
         <div class="ttab-ticks-body">
             {% for h in range(minHour, maxHour+1) %}
             <div class="ttab-tick" style="top: {{100 * (h - minHour) / (maxHour - minHour)}}%;">
-                <span class="ttab-tick-label">{{h}}:00</span>
+                <span class="ttab-tick-label ttab-left">{{h}}:00</span>
                 <span class="ttab-tick-line"></span>
+                <span class="ttab-tick-label ttab-right">{{h}}:00</span>
             </div>
             {% endfor %}
         </div>
     </div>
     <div class="ttab-events">
-        <div class="ttab-margin"></div>
+        <div class="ttab-margin ttab-left"></div>
     {% for dayLabel in dayLabels %}
         <div class="ttab-day">
             <div class="ttab-day-header">{{dayLabel}}</div>
@@ -40,6 +41,7 @@
             </div>
         </div>
     {% endfor %}
+        <div class="ttab-margin ttab-right"></div>
     </div>
 </div>
 </div>
