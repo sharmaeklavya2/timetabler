@@ -28,8 +28,11 @@ body {
 
 .main {
     position: relative;
-    height: 450px;
+    height: 500px;
+    min-height: 450px;
+    min-width: 530px;
     overflow-y: scroll;
+    scrollbar-width: none;
     resize: vertical;
 }
 .ttab {
@@ -111,7 +114,11 @@ body {
     outline: 1px solid var(--tick-color);
     display: flex;
     flex-direction: column;
-    overflow: clip;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.ttab-event::-webkit-scrollbar {
+    display: none;
 }
 .ttab-event > * {
     margin: 0.1rem 0.3rem;
