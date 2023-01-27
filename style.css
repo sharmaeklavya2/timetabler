@@ -16,6 +16,7 @@ body {
 @media (max-width: 850px) {
     body {
         padding: 0 1rem 1rem 1rem;
+        font-size: 0.9rem;
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -56,10 +57,16 @@ body {
 .ttab-tick-label {
     width: 3rem;
 }
+@media (max-width: 850px) {
+.ttab-tick-label {
+    width: 2.2rem;
+    font-size: 0.8rem;
+}
+}
 .ttab-tick-line {
-    height: 1px;
+    height: 0px;
     flex: 1;
-    background-color: var(--tick-color);
+    border-top: 1px solid var(--tick-color);
 }
 .ttab-tick {
     height: 0;
@@ -71,10 +78,16 @@ body {
 
 .ttab-margin {
     width: 3.5rem;
+    border-right: 1px solid var(--tick-color);
+}
+@media (max-width: 850px) {
+.ttab-margin {
+    width: 2.5rem;
+}
 }
 .ttab-day {
     flex: 1;
-    border: 1px solid var(--tick-color);
+    border-right: 1px solid var(--tick-color);
     display: flex;
     flex-direction: column;
 }
@@ -91,12 +104,16 @@ body {
 }
 .ttab-event {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 4px);
+    left: 2px;
     background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 0.4rem;
+    outline: 1px solid var(--tick-color);
     display: flex;
     flex-direction: column;
     overflow: clip;
 }
 .ttab-event > * {
     margin: 0.1rem 0.3rem;
+    white-space: nowrap;
 }
