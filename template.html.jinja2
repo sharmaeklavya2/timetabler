@@ -16,31 +16,31 @@
     <div class="ttab-ticks">
         <div class="ttab-ticks-header"></div>
         <div class="ttab-ticks-body">
-            {% for h in range(minHour, maxHour+1) %}
-            <div class="ttab-tick" style="top: {{100 * (h - minHour) / (maxHour - minHour)}}%;">
+{% for h in range(minHour, maxHour+1) %}
+            <div class="ttab-tick" style="top: {{'{:.6f}'.format(100 * (h - minHour) / (maxHour - minHour))}}%;">
                 <span class="ttab-tick-label ttab-left">{{h}}:00</span>
                 <span class="ttab-tick-line"></span>
                 <span class="ttab-tick-label ttab-right">{{h}}:00</span>
             </div>
-            {% endfor %}
+{% endfor %}
         </div>
     </div>
     <div class="ttab-events">
         <div class="ttab-margin ttab-left"></div>
-    {% for dayLabel in dayLabels %}
+{% for dayLabel in dayLabels %}
         <div class="ttab-day">
             <div class="ttab-day-header">{{dayLabel}}</div>
             <div class="ttab-day-body">
-        {% for event in events[loop.index0] %}
-                <div class="ttab-event" style="top: calc({{100 * event.beginFrac}}% + var(--outline-width)); height: calc({{100 * event.lenFrac}}% - 2 * var(--outline-width));">
-                    {% if event.name %}<span class="ttab-event-name">{{event.name}}</span>{% endif %}
+{% for event in events[loop.index0] %}
+                <div class="ttab-event" style="top: calc({{'{:.6f}'.format(100 * event.beginFrac)}}% + var(--outline-width)); height: calc({{'{:.6f}'.format(100 * event.lenFrac)}}% - 2 * var(--outline-width));">
+                    {%- if event.name %}<span class="ttab-event-name">{{event.name}}</span>{% endif -%}
                     <span class="ttab-event-time">{{event.beginTime}} &ndash; {{event.endTime}}</span>
-                    {% if event.venue %}<span class="ttab-event-venue">{{event.venue}}</span>{% endif %}
+                    {%- if event.venue %}<span class="ttab-event-venue">{{event.venue}}</span>{% endif -%}
                 </div>
-        {% endfor %}
+{% endfor %}
             </div>
         </div>
-    {% endfor %}
+{% endfor %}
         <div class="ttab-margin ttab-right"></div>
     </div>
 </div>
