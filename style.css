@@ -31,6 +31,7 @@ a:not(:hover) {
     overflow-y: scroll;
     scrollbar-width: none;
     resize: vertical;
+    padding-right: 1rem;
     --tick-color: rgba(128, 128, 128, 0.4);
     --outline-color: rgba(128, 128, 128, 0.6);
     --outline-width: 2px;
