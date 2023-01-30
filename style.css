@@ -4,16 +4,10 @@ html {
 body {
     margin: 0;
     padding: 0 2.5rem 2.5rem 2.5rem;
+    color: #202020;
 }
 a:not(:hover) {
     text-decoration: none;
-}
-body {
-    color: #202020;
-    --tick-color: rgba(128, 128, 128, 0.4);
-    --outline-color: rgba(128, 128, 128, 0.6);
-    --outline-width: 2px;
-    --header-height: 3rem;
 }
 @media (max-width: 850px) {
     body {
@@ -28,7 +22,7 @@ body {
     }
 }
 
-.main {
+.ttab-wrapper {
     position: relative;
     height: 500px;
     min-height: 450px;
@@ -37,6 +31,10 @@ body {
     overflow-y: scroll;
     scrollbar-width: none;
     resize: vertical;
+    --tick-color: rgba(128, 128, 128, 0.4);
+    --outline-color: rgba(128, 128, 128, 0.6);
+    --outline-width: 2px;
+    --header-height: 3rem;
 }
 .ttab {
     width: 100%;
