@@ -32,7 +32,7 @@
             <div class="ttab-day-header">{{dayLabel}}</div>
             <div class="ttab-day-body">
         {% for event in events[loop.index0] %}
-                <div class="ttab-event" style="top: calc({{100 * event.beginFrac}}% + 1px); height: calc({{100 * event.lenFrac}}% - 2px);">
+                <div class="ttab-event" style="top: calc({{100 * event.beginFrac}}% + var(--outline-width)); height: calc({{100 * event.lenFrac}}% - 2 * var(--outline-width));">
                     {% if event.name %}<span class="ttab-event-name">{{event.name}}</span>{% endif %}
                     <span class="ttab-event-time">{{event.beginTime}} &ndash; {{event.endTime}}</span>
                     {% if event.venue %}<span class="ttab-event-venue">{{event.venue}}</span>{% endif %}
