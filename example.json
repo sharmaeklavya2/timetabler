@@ -36,5 +36,12 @@
     "name": "Seminar",
     "day": "Fri",
     "time": ["10:00", "11:00"]
+},
+{
+    "privateName": "Meet advisor",
+    "name": "Meeting",
+    "venue": "TB 216B",
+    "day": "Thurs",
+    "time": ["16:00", "17:00"]
 }
 ]
